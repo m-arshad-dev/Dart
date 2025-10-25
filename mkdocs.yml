@@ -1,0 +1,28 @@
+site_name: Leanr Dart - From Basics to Advanced
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: amber
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - search.highlight
+    - search.suggest
+plugins:
+  - search
+  - awesome-pages
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Hello World: getting-started/hello-world.md
+  - Core Concepts:
+    - Variables: core/variables.md
+    - Functions: core/functions.md
+    - Classes: core/classes.md
+  - Advanced:
+    - Async & Await: advanced/async-await.md
+    - Streams: advanced/streams.md
+    - Null Safety: advanced/null-safety.md
+  - About: about.md
