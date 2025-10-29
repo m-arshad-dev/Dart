@@ -1,9 +1,10 @@
 {
-    "name": "Dart Tutorial",
-    "image":"mcr.microsoft.com/devcontainers/python:latest",
-    "customizations": {
-        "settings":{},
-        "extensions":["ms-python.python"]
-    },
-    "postCreateCommand": "pip install -r requirements.txt"
+  "name": "Dart Tutorial",
+  "image": "mcr.microsoft.com/devcontainers/python:latest",
+  "customizations": {
+    "settings": {},
+    "extensions": ["ms-python.python"]
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "pip install -r /workspaces/dart-tutorial/requirements.txt"
 }

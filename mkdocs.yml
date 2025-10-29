@@ -1,4 +1,8 @@
-site_name: Leanr Dart - From Basics to Advanced
+site_name: Learn Dart – From Basics to Advanced
+site_description: A complete Dart programming tutorial — from beginner to advanced, with examples and hands-on exercises.
+site_author: Muhammad Arshad
+repo_url: https://github.com/yourusername/learn-dart
+
 theme:
   name: material
   palette:
@@ -7,22 +11,44 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
+    - navigation.expand
     - search.highlight
     - search.suggest
+    - toc.integrate
+
 plugins:
   - search
   - awesome-pages
+  # removed "mkdocs-material" (it's a theme, not a plugin)
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
 nav:
   - Home: index.md
   - Getting Started:
-    - Installation: getting-started/installation.md
-    - Hello World: getting-started/hello-world.md
+      - Installation: getting-started/installation.md
+      - Hello World: getting-started/hello-world.md
+      - Basic Syntax: getting-started/basic-syntax.md
   - Core Concepts:
-    - Variables: core/variables.md
-    - Functions: core/functions.md
-    - Classes: core/classes.md
-  - Advanced:
-    - Async & Await: advanced/async-await.md
-    - Streams: advanced/streams.md
-    - Null Safety: advanced/null-safety.md
+      - Variables & Data Types: core/variables.md
+      - Operators: core/operators.md
+      - Control Flow: core/control-flow.md
+      - Functions: core/functions.md
+      - Classes & Objects: core/classes.md
+      - Collections: core/collections.md
+  - Advanced Topics:
+      - Null Safety: advanced/null-safety.md
+      - Async & Await: advanced/async-await.md
+      - Streams: advanced/streams.md
+      - Generics: advanced/generics.md
+      - Mixins & Extensions: advanced/mixins-extensions.md
+  - Projects:
+      - Console Projects: projects/console.md
+      - Flutter Intro: projects/flutter-intro.md
   - About: about.md
