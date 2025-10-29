@@ -1,0 +1,1704 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn how to declare variables, understand Dart data types, and work with constants, lists, maps, and sets in Dart programming.">
+      
+      
+        <meta name="author" content="Muhammad Arshad">
+      
+      
+      
+        <link rel="prev" href="../../getting-started/basic-syntax/">
+      
+      
+        <link rel="next" href="../operators/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Variables and Data Types in Dart - Learn Dart – From Basics to Advanced</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#variables-and-data-types-in-dart" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learn Dart – From Basics to Advanced" class="md-header__button md-logo" aria-label="Learn Dart – From Basics to Advanced" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Dart – From Basics to Advanced
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Variables and Data Types in Dart
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yourusername/learn-dart" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Core Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/null-safety/" class="md-tabs__link">
+          
+  
+  
+  Advanced Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/console/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learn Dart – From Basics to Advanced" class="md-nav__button md-logo" aria-label="Learn Dart – From Basics to Advanced" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Dart – From Basics to Advanced
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yourusername/learn-dart" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/hello-world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hello World
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/basic-syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Syntax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Core Concepts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables & Data Types
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-what-is-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      🪜 Step 1: What Is a Variable?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🪜 Step 1: What Is a Variable?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-declaring-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Step 2: Declaring Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-understanding-dart-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Step 3: Understanding Dart Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Step 3: Understanding Dart Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔢 Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔢 Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧵 Strings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Booleans (bool)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧺 Lists (Arrays)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps-keyvalue-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗺️ Maps (Key–Value Pairs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔢 Sets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-type-inference-var-vs-dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Step 4: Type Inference — var vs dynamic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Step 4: Type Inference — var vs dynamic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      var
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      dynamic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-constants-final-vs-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Step 5: Constants — final vs const
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Step 5: Constants — final vs const">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-type-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Step 6: Type Conversion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Step 7: Summary Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Practice Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Quick Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classes & Objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced Topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/null-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Null Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/async-await/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async & Await
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/mixins-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mixins & Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Console Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/flutter-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flutter Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="variables-and-data-types-in-dart">🧠 Variables and Data Types in Dart<a class="headerlink" href="#variables-and-data-types-in-dart" title="Permanent link">&para;</a></h1>
+<p>Understanding <strong>variables</strong> and <strong>data types</strong> is the foundation of any programming language — and Dart is no exception.<br />
+Let’s explore what they are, how to use them, and how Dart makes them both <strong>powerful</strong> and <strong>simple</strong>.</p>
+<hr />
+<h2 id="step-1-what-is-a-variable">🪜 Step 1: What Is a Variable?<a class="headerlink" href="#step-1-what-is-a-variable" title="Permanent link">&para;</a></h2>
+<p>A <strong>variable</strong> is like a container that stores a value — it gives data a name so you can use it in your program.</p>
+<blockquote>
+<p>🧺 <strong>Variable = Label + Value</strong></p>
+</blockquote>
+<h3 id="example">💡 Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Arshad&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>Arshad
+</code></pre></div>
+
+<p><strong>Explanation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Variable name</td>
+</tr>
+<tr>
+<td><code>'Arshad'</code></td>
+<td>Value assigned</td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td>Dart automatically infers the type (<code>String</code> in this case)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-2-declaring-variables">🧩 Step 2: Declaring Variables<a class="headerlink" href="#step-2-declaring-variables" title="Permanent link">&para;</a></h2>
+<p>There are multiple ways to declare variables in Dart, each with a specific purpose.</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>var</code></td>
+<td>Type inferred automatically</td>
+<td><code>var age = 20;</code></td>
+</tr>
+<tr>
+<td><code>dynamic</code></td>
+<td>Type can change later</td>
+<td><code>dynamic data = 'Hello'; data = 123;</code></td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>Immutable after assignment (runtime constant)</td>
+<td><code>final city = 'Lahore';</code></td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>Immutable at compile time</td>
+<td><code>const PI = 3.14;</code></td>
+</tr>
+<tr>
+<td>Explicit Type</td>
+<td>Declare with a specific type</td>
+<td><code>int year = 2025;</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-3-understanding-dart-data-types">⚡ Step 3: Understanding Dart Data Types<a class="headerlink" href="#step-3-understanding-dart-data-types" title="Permanent link">&para;</a></h2>
+<p>Dart is <strong>statically typed</strong>, meaning every variable has a specific type — even when Dart infers it for you.</p>
+<hr />
+<h3 id="numbers">🔢 Numbers<a class="headerlink" href="#numbers" title="Permanent link">&para;</a></h3>
+<p>Dart supports two main number types:</p>
+<ul>
+<li><code>int</code> → for integers (whole numbers)  </li>
+<li><code>double</code> → for decimal numbers  </li>
+</ul>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9.99</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Age: </span><span class="si">$</span><span class="n">age</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Price: </span><span class="si">$</span><span class="n">price</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Age</span><span class="o">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="n">Price</span><span class="o">:</span><span class="w"> </span><span class="mf">9.99</span>
+</code></pre></div>
+
+<p>✅ You can also use <code>num</code> (can store both <code>int</code> and <code>double</code>):</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">num</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100.5</span><span class="p">;</span>
+</code></pre></div>
+
+<hr />
+<h3 id="strings">🧵 Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h3>
+<p>Strings represent text.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Arshad&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello, </span><span class="si">$</span><span class="n">name</span><span class="s1">!&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// String interpolation</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>Hello, Arshad!
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">String Tips</p>
+</div>
+<ul>
+<li>Use <code>' '</code> or <code>" "</code> — both work.  </li>
+<li>Use triple quotes (<code>'''</code> or <code>"""</code>) for <strong>multi-line strings</strong>.  </li>
+<li>Use <strong>interpolation</strong> (<code>$variable</code> or <code>${expression}</code>) for string combination.  </li>
+</ul>
+<hr />
+<h3 id="booleans-bool">⚙️ Booleans (<code>bool</code>)<a class="headerlink" href="#booleans-bool" title="Permanent link">&para;</a></h3>
+<p>Represents <strong>true</strong> or <strong>false</strong> values.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">isActive</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">isLoggedIn</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>true
+false
+</code></pre></div>
+
+<p>✅ Used often in conditions:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isActive</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;User is active!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3 id="lists-arrays">🧺 Lists (Arrays)<a class="headerlink" href="#lists-arrays" title="Permanent link">&para;</a></h3>
+<p>A <strong>List</strong> stores multiple values in an ordered sequence.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mango&#39;</span><span class="p">];</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Access by index</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Apple, Banana, Mango]</span>
+<span class="na">Banana</span>
+</code></pre></div>
+
+<p>✅ Modify lists dynamically:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">fruits</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;Orange&#39;</span><span class="p">);</span>
+<span class="n">fruits</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Banana&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Lists in Dart are <strong>zero-indexed</strong> — meaning the first element is at index <code>0</code>.</p>
+<hr />
+<h3 id="maps-keyvalue-pairs">🗺️ Maps (Key–Value Pairs)<a class="headerlink" href="#maps-keyvalue-pairs" title="Permanent link">&para;</a></h3>
+<p>Maps store data as <strong>key → value</strong> pairs, similar to dictionaries in other languages.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arshad&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;city&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Lahore&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;country&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Pakistan&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Access by key</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>Arshad
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>Maps are excellent for representing structured data — such as user profiles or configuration settings.</p>
+<hr />
+<h3 id="sets">🔢 Sets<a class="headerlink" href="#sets" title="Permanent link">&para;</a></h3>
+<p>A <strong>Set</strong> is an unordered collection of <strong>unique</strong> values (no duplicates).</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">};</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>{1, 2, 3}
+</code></pre></div>
+
+<hr />
+<h2 id="step-4-type-inference-var-vs-dynamic">🧱 Step 4: Type Inference — <code>var</code> vs <code>dynamic</code><a class="headerlink" href="#step-4-type-inference-var-vs-dynamic" title="Permanent link">&para;</a></h2>
+<h3 id="var"><code>var</code><a class="headerlink" href="#var" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Arshad&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// inferred as String</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Ali&#39;</span><span class="p">;</span><span class="w">         </span><span class="c1">// ✅ allowed</span>
+<span class="c1">// name = 10;         // ❌ Error: cannot assign int to String</span>
+</code></pre></div>
+
+<h3 id="dynamic"><code>dynamic</code><a class="headerlink" href="#dynamic" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">dynamic</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="p">;</span>
+<span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">123</span><span class="p">;</span><span class="w">       </span><span class="c1">// ✅ Works</span>
+<span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">      </span><span class="c1">// ✅ Works</span>
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>Use:
+- <code>var</code> → when type <strong>does not change</strong>.<br />
+- <code>dynamic</code> → when type <strong>may change</strong> during runtime.</p>
+<hr />
+<h2 id="step-5-constants-final-vs-const">🔒 Step 5: Constants — <code>final</code> vs <code>const</code><a class="headerlink" href="#step-5-constants-final-vs-const" title="Permanent link">&para;</a></h2>
+<p>Both create <strong>immutable variables</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>When to Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>final</code></td>
+<td>Value known <strong>at runtime</strong></td>
+<td><code>final now = DateTime.now();</code></td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>Value known <strong>at compile-time</strong></td>
+<td><code>const pi = 3.1416;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">();</span><span class="w"> </span><span class="c1">// runtime constant</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.0</span><span class="p">;</span><span class="w">          </span><span class="c1">// compile-time constant</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="step-6-type-conversion">🔄 Step 6: Type Conversion<a class="headerlink" href="#step-6-type-conversion" title="Permanent link">&para;</a></h2>
+<p>Convert between types easily:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// String → int</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// String → double</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;12.5&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// int → String</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// double → int</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">toInt</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">a</span><span class="s1">, </span><span class="si">$</span><span class="n">b</span><span class="s1">, </span><span class="si">$</span><span class="n">c</span><span class="s1">, </span><span class="si">$</span><span class="n">d</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span>
+</code></pre></div>
+
+<hr />
+<h2 id="step-7-summary-table">📚 Step 7: Summary Table<a class="headerlink" href="#step-7-summary-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>Whole numbers</td>
+<td><code>int age = 20;</code></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>Decimal numbers</td>
+<td><code>double price = 10.5;</code></td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td>Text</td>
+<td><code>String name = 'Dart';</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>True/False</td>
+<td><code>bool isOk = true;</code></td>
+</tr>
+<tr>
+<td><code>List</code></td>
+<td>Ordered collection</td>
+<td><code>List&lt;int&gt; nums = [1, 2, 3];</code></td>
+</tr>
+<tr>
+<td><code>Map</code></td>
+<td>Key-value pairs</td>
+<td><code>Map user = {'id': 1};</code></td>
+</tr>
+<tr>
+<td><code>Set</code></td>
+<td>Unique values</td>
+<td><code>Set&lt;int&gt; s = {1, 2, 3};</code></td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td>Type inferred automatically</td>
+<td><code>var name = 'Ali';</code></td>
+</tr>
+<tr>
+<td><code>dynamic</code></td>
+<td>Type flexible</td>
+<td><code>dynamic x = 10; x = 'Hi';</code></td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>Immutable (runtime)</td>
+<td><code>final city = 'Lahore';</code></td>
+</tr>
+<tr>
+<td><code>const</code></td>
+<td>Immutable (compile time)</td>
+<td><code>const PI = 3.14;</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="practice-exercise">🧩 Practice Exercise<a class="headerlink" href="#practice-exercise" title="Permanent link">&para;</a></h2>
+<p>Try this small challenge 👇</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Arshad&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5.9</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">isStudent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">skills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Dart&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Flutter&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Git&#39;</span><span class="p">];</span>
+<span class="w">  </span><span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Lahore&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;country&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Pakistan&#39;</span><span class="p">};</span>
+
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;My name is </span><span class="si">$</span><span class="n">name</span><span class="s1">, I am </span><span class="si">$</span><span class="n">age</span><span class="s1"> years old.&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Height: </span><span class="si">$</span><span class="n">height</span><span class="s1"> ft&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Am I a student? </span><span class="si">$</span><span class="n">isStudent</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Skills: </span><span class="si">$</span><span class="n">skills</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Address: </span><span class="si">$</span><span class="n">address</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Expected Output:</strong></p>
+<div class="codehilite"><pre><span></span><code>My name is Arshad, I am 25 years old.
+Height: 5.9 ft
+Am I a student? true
+Skills: [Dart, Flutter, Git]
+Address: {city: Lahore, country: Pakistan}
+</code></pre></div>
+
+<hr />
+<h2 id="quick-recap">🧠 Quick Recap<a class="headerlink" href="#quick-recap" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dart automatically <strong>infers variable types</strong> with <code>var</code>.  </li>
+<li>Use <code>dynamic</code> for variables that can hold different types.  </li>
+<li>Use <code>final</code> or <code>const</code> for <strong>immutable</strong> values.  </li>
+<li>Core built-in types: <code>int</code>, <code>double</code>, <code>String</code>, <code>bool</code>, <code>List</code>, <code>Map</code>, and <code>Set</code>.  </li>
+<li>Everything in Dart is an <strong>object</strong>, even numbers and booleans.  </li>
+</ul>
+<hr />
+<div class="grid cards" markdown>
+
+- [:material-arrow-left-circle: Previous — Hello World](../getting-started/hello-world.md)
+- [:material-arrow-right-circle: Next — Operators in Dart](operators.md)
+
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.expand", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
